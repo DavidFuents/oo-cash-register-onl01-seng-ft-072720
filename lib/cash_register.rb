@@ -11,7 +11,7 @@ class CashRegister
   def add_item(title, price, quantity = 1)
     self.total += price * quantity
     @last_item_price = price * quantity
-    while quantity >= 0
+    while quantity.positive?
       @items << title
       quantity -= 1
     end
